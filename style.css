@@ -1,0 +1,89 @@
+﻿
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+        background-color:black;
+        margin: 0;
+        padding: 0;
+        text-align:center;
+    }
+
+
+
+
+
+
+
+
+
+#container {
+	background-color:#e2f2fa;	
+        margin:0 auto;
+        padding:0 0px 0 0px;
+        position:relative;
+        width:900px;
+		height:100%;
+        text-align:left;
+        clear: both;
+		
+    }
+
+#naglowek {
+
+        margin-bottom:0px;
+		background-color:red;
+		position:center;
+		width:900px;
+		height: 50px;
+		clear: center;
+		
+		
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Page */
+
+#page {
+	width: 860px;
+	margin: 0px auto;
+	padding: 15px 0px 0px 0px;
+	
+}
+
+
+#content {
+	float: left;
+	width: 583px;
+}
+
+
+#sidebar {
+	float: right;
+	width: 236px;
+}
+
+
+
+
+
+#stopka {
+        background-color:blue;
+        clear:both;
+		height:40px;
+		padding-top:8px;
+		padding-right:30px;
+	}

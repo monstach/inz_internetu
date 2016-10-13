@@ -1,0 +1,31 @@
+Projekt: Forum
+
+Funkcjonalności:
+1. Logowanie
+2. Rejestracja
+3. Tworzenie postów i edycja
+4. Strona główna z odnośnikami
+5. Opcje dla admina
+
+Harmonogram:
+1. Stworzenie repozytorium
+2. Stworzenie tabeli do przechowywania danych uzytkowników
+3. Logowanie
+4. Informowanie o zalogowaniu
+5. Rejestracja
+6. Zablokowanie mozliwosci rejestracji pod tym samym loginem
+7. Szyfrowanie hasła
+8. Edycja profilu
+9. Stworzenie tabeli dla wpisów
+10. Podglad wpisow
+11. Tworzenie wpisów
+12. Tworzenie komentarzy
+13. Strona główna - opis i instrukcja na stronie
+14. Strona główna - odnośniki
+15. Opcje dla admina: podgląd uzytkowników
+16. Opcje dla admina: usuwanie uzytkowników
+17. Opcje dla admina: edycja profilów
+18. Graficzna reprezentacja strony
+19. Stworzenie pliku z opisem funkcji
+20. Sprawdzanie funkcjonalnosci strony i poprawki graficzne
+

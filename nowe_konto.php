@@ -14,6 +14,8 @@ mysql_select_db('forum_db');
 
 <center>
 <div id="naglowek">
+
+
 <a href="index.php"> Strona główna </a>
 <a href="nowe_konto.php"> Rejestracja </a>
 <a href="zaloguj.php"> Zaloguj </a>
@@ -22,42 +24,49 @@ mysql_select_db('forum_db');
 
 </div>
 </center>
+</center>
 <div id="container">
 			<div id="page">
 				<div id="content">
 					<div class="post">
 						<div class="title">
-							<h2><a href="#">Logowanie</a></h2>
-							
-
-						</div>	
-<div class="entry">
- <?php
-if(@!$_SESSION['zalogowany']){
-      echo "<FORM method='post' action='login.php'>
-       login <input style='margin-bottom:10px;' type='text' name='login' maxlength='32'> <br>
-       haslo <input style='margin-bottom:10px;' type='password' name='haslo' maxlength='32'> <br>
-       <input style='margin-left:110px;' type='submit' value='Zaloguj' >
-
-    </FORM>";
-  }
-  else{
-    echo "<h1 align='center'>Jestes juz zalogowany</h1>";
-  }
-
-
-?> 
-						
+							<h2><a href="#">Rejestracja</a></h2>
 							
 						</div>
+					
 					
 						
 					</div>
 					<div class="post">
 						
 						<div class="entry">
-							<p></p>
-						</div>
+					<?php
+          if( !@$_SESSION['zalogowany']){
+
+echo ' <form method="post" action="nowe_k.php"> ';
+echo ' <table>';
+echo '	<tr>';
+echo '	<td>Podaj imię</td><td><input type="text" name="imie" /></td> ';
+echo '	</tr>  ';
+echo '	<tr>  ';
+echo '	<td>Podaj nazwisko</td><td><input type="text" name="nazwisko" /></td> ';
+echo '	</tr>';
+echo '	<tr> ';
+echo '	<td>Podaj login</td><td><input type="text" name="login" maxlength="32" /></td>';
+echo '	</tr>';
+echo '	<tr>';
+echo '	<td>Podaj haslo</td><td><input type="password" name="haslo" maxlength="32" /></td>';
+echo '	</tr>';
+echo '	<tr>';
+echo '	<td></td><td><input type="submit" value="Załóż konto" /></td>';
+echo '	</tr>';
+echo '</form>';
+echo '</table>';
+}
+else {
+echo "<h1 align='center'>Masz już konto</h1>";
+}
+?>						</div>
 						
 					</div>
 				</div>
@@ -76,40 +85,25 @@ if(@!$_SESSION['zalogowany']){
    }
    else
 
-    echo "<span>Nie jesteś zalogowany</span>" ?> </h2>
+    echo "<span>Nie jesteś zalogowany</span>" ?>   </h2>
 							<ul>
-									<?php
-                                                                if (@$_SESSION['zalogowany']){
-                                                    if (@$_SESSION['admin']){
-					echo "
-                            <a href='pok_posty.php'>Wyswietl forum</a><br>
-                            <a href='pok_userow.php'>Wyswietl użytkowników</a><br>";
-											
-				} else {
-				echo "<a href='edytuj.php'>Edytuj konto</a><br>
-                        <a href='pok_posty.php'>Wyswietl forum</a><br>";
-					
-					}
-				}
-		
-				
-			?>
+								
 								
 							</ul>
 						</li>
 					</ul>
 				</div>
-				
+				<!-- end #sidebar -->
 				<div style="clear: both; height: 40px;">&nbsp;</div>
 			</div>
 			<div id="stopka">
-	
+
 			
 			
 		</div>
 	</div>
 	
-
+</div>
 
 
 

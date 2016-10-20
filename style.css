@@ -13,13 +13,6 @@ body {
     }
 
 
-
-
-
-
-
-
-
 #container {
 	background-color:#e2f2fa;	
         margin:0 auto;
@@ -35,7 +28,7 @@ body {
 #naglowek {
 
         margin-bottom:0px;
-		background-color:red;
+		background-color:blue;
 		position:center;
 		width:900px;
 		height: 50px;
@@ -43,16 +36,6 @@ body {
 		
 		
     }
-
-
-
-
-
-
-
-
-
-
 
 
 /* Page */
@@ -75,8 +58,6 @@ body {
 	float: right;
 	width: 236px;
 }
-
-
 
 
 

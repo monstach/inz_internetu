@@ -25,22 +25,23 @@ mysql_select_db('forum_db');
 </div>
 </center>
 <div id="container">
-
-
-
-		
-
 			<div id="page">
-
-
-	
 				<div id="content">
 					<div class="post">
 						<div class="title">
-							<h2><a href="#">Witamy na forum!!!</a></h2>
+							<h2><a href="#">Dodaj Posta</a></h2>
+							
+
+						</div>	
+<div class="entry">
+ <form action="dodaj_p2.php" method="post">
+Tu wpisz treść posta który chcesz dodać:<br /> <textarea name="poscik" cols="50" rows="3"></textarea><br />
+<input type="submit" value="Dodaj post">
+</form>
+						
 							
 						</div>
-						
+					
 						
 					</div>
 					<div class="post">
@@ -66,13 +67,13 @@ mysql_select_db('forum_db');
    }
    else
 
-    echo "<span>Nie jesteś zalogowany</span>" ?>   </h2>
+    echo "<span>Nie jesteś zalogowany</span>" ?> </h2>
 							<ul>
-							<?php
+									<?php
                                                                 if (@$_SESSION['zalogowany']){
                                                     if (@$_SESSION['admin']){
 					echo "
-                           
+                            <a href='pok_posty.php'>Wyswietl forum</a><br>
                             <a href='pok_userow.php'>Wyswietl użytkowników</a><br>";
 											
 				} else {
@@ -85,18 +86,15 @@ mysql_select_db('forum_db');
 				
 			?>
 								
-								
 							</ul>
 						</li>
 					</ul>
 				</div>
-				
-
-				
-								
+			
+				<div style="clear: both; height: 40px;">&nbsp;</div>
 			</div>
 			<div id="stopka">
-	
+
 			
 			
 		</div>

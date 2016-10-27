@@ -25,32 +25,56 @@ mysql_select_db('forum_db');
 </div>
 </center>
 <div id="container">
-
-
-
-		
-
 			<div id="page">
-
-
-	
 				<div id="content">
 					<div class="post">
-						<div class="title">
-							<h2><a href="#">Witamy na forum!!!</a></h2>
-							
-						</div>
 						
+					
+
 						
 					</div>
 					<div class="post">
+					
 						
 						<div class="entry">
-							<p></p>
+						<?php
+if (@$_SESSION['zalogowany']){
+echo "<a href='dodaj_post.php'><h2 align='center'>DODAJ</h2></a>";
+   isset($_GET['s']) ? $od = $_GET['s']*6 : $od = 0;
+   $query="select * from wpisy where `typ`='p' order by `data_wpis` DESC Limit {$od},6";
+   $result=mysql_query($query);
+   while ($rekord=mysql_fetch_assoc($result)){
+	$zapytanie="select * from uzytkownicy where `id`={$rekord['id_uzytkownika']}";
+	$rezultat=mysql_query($zapytanie);
+	$autor=mysql_fetch_assoc($rezultat);
+    echo "
+
+		
+			
+		
+		";
+		echo "<br><hr>";
+	echo "<a href='komentarze.php?idwpis={$rekord['id_wpis']}'><div class='post'>".$rekord['wpis']."</div></a>";
+				echo "Dodany: ".$rekord['data_wpis']." przez ".$autor['login']."<br />";
+				echo "<a href='dodaj_kom.php?idwpis={$rekord['id_wpis']}'>Dodaj komentarz</a> &nbsp;";
+			        if (@$_SESSION['admin'])
+							echo "<a href='usun_wpis.php?id={$rekord['id_wpis']}'>Usuń</a> ";
+							echo"<hr>";
+		}
+		$query="select count(*) from wpisy where `typ`='p'";
+		$query=mysql_query($query);
+		$result=ceil(mysql_result($query,0,0)/6);
+		echo "<div style='width:150px; margin: 0 auto;'> Strona: ";
+		for ($i=0; $i < $result; $i++){
+			$strona=$i+1;
+			echo "<a href='pok_posty.php?s={$i}'>{$strona}</a>, ";
+			}
+	}
+?>					
 						</div>
 						
 					</div>
-				</div>
+				</div>  </div>
 				
 				<div id="sidebar">
 					<ul>
@@ -68,11 +92,11 @@ mysql_select_db('forum_db');
 
     echo "<span>Nie jesteś zalogowany</span>" ?>   </h2>
 							<ul>
-							<?php
+									<?php
                                                                 if (@$_SESSION['zalogowany']){
                                                     if (@$_SESSION['admin']){
 					echo "
-                           
+                            <a href='pok_posty.php'>Wyswietl forum</a><br>
                             <a href='pok_userow.php'>Wyswietl użytkowników</a><br>";
 											
 				} else {
@@ -85,20 +109,17 @@ mysql_select_db('forum_db');
 				
 			?>
 								
-								
 							</ul>
 						</li>
 					</ul>
 				</div>
-				
-
-				
-								
+			
+				<div style="clear: both; height: 40px;">&nbsp;</div>
 			</div>
 			<div id="stopka">
-	
+
 			
-			
+		
 		</div>
 	</div>
 	
@@ -106,7 +127,7 @@ mysql_select_db('forum_db');
 
 
 
-
+</div>
 
 </body>
 </html>
